@@ -5,6 +5,6 @@
 // You can also execute the entire file by running the command:
 //     SFDX: Execute Anonymous Apex with Editor Contents
 
-string tempvar = 'Aiko';
-System.debug('Hello World!');
-System.debug('My name is ' + tempvar);
+
+System.debug('Hello World! from VS Code');
+System.debug('I will get there! ');

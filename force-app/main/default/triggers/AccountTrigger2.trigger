@@ -11,18 +11,26 @@ trigger AccountTrigger2 on Account (before insert,after insert,before update,aft
 if (trigger.isAfter && trigger.isUpdate) {
   for (Account accRecNew : Trigger.new) {
        Account accRecOld = Trigger.OldMap.get(accRecNew.Id);
-       if()accRecNew.BillingStreet != accRecOld.BillingStreet
+       if()accRecNew.BillingStreet != accRecOld.BillingStreet;
   }
 }
 IF(Trigger.isBefore && trigger.isUpdate){
+
   system.debug('New Values');
-  system.debug(trigger.new); system.debug(trigger.newMap); //Id, Recordwithnewvalues
+  system.debug(trigger.new); 
+  system.debug(trigger.newMap); //Id, Recordwithnewvalues
+  
   system.debug('Old Values');
-  system.debug(trigger.old); system.debug(trigger.oldMap); //Id, recordswitholdValues
+  system.debug(trigger.old); 
+  system.debug(trigger.oldMap); //Id, recordswitholdValues
+    
     for(Account accRecNew: Trigger.new){
-    Account accRecOld = trigger.oldMap.get(accRecNew.Id); if(accRecNew.Name!= accRecOld.Name){
-        accRecNew.addError('Account Name can not be modified/changed once it is created'); }
-} }
+    Account accRecOld = trigger.oldMap.get(accRecNew.Id); if(accRecNew.Name != accRecOld.Name){
+        accRecNew.addError('Account Name can not be modified/changed once it is created'); 
+      }
+
+    } 
+  }
 //AFTER INSERT LOGIC TIO BE WRITTEN IN THIS BELOW BLOCK if(trigger.isAfter && Trigger.isInsert){
 list<Contact> conListToInsert = new List<contact>(); for(Account accRec: Trigger.new){
 contact con = new Contact(); con.LastName = accRec.Name; con.AccountId = accRec.Id; conListToInsert.add(con);

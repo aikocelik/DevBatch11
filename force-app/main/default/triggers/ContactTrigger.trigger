@@ -1,5 +1,7 @@
 trigger ContactTrigger on Contact (before insert, after insert,before update,after update) {
 
+  System.debug('Before updated records');
+  System.debug('After updated records');
 
   /*if (trigger.isBefore && trigger.isInsert) {
       System.debug('====BEFORE INSERT====');
@@ -23,7 +25,7 @@ trigger ContactTrigger on Contact (before insert, after insert,before update,aft
       System.debug('trigger.newMap is = ' + trigger.newMap);
       System.debug('tigger.oldMap is = ' + trigger.oldMap);
     } */
-    
+    /*
     if (trigger.isAfter && trigger.isUpdate) {
       System.debug('====AFTER UPDATE====');
       System.debug('trigger.new is = ' + trigger.new);
@@ -43,5 +45,5 @@ trigger ContactTrigger on Contact (before insert, after insert,before update,aft
           }
         }
       }
-    }
+    } */
 }

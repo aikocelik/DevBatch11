@@ -1,7 +1,12 @@
 trigger ContactTrigger on Contact (before insert, after insert,before update,after update) {
+  
 
-  System.debug('Before updated records');
-  System.debug('After updated records');
+
+
+
+
+  //System.debug('Before updated records');
+  //System.debug('After updated records');
 
   /*if (trigger.isBefore && trigger.isInsert) {
       System.debug('====BEFORE INSERT====');

@@ -1,16 +1,20 @@
 public class Calculator3 {
-    // method name = add
-    // parameter = list<integer>
-    // return type = integer(retern addition of all the elements in the list)
-    public static integer add(List<integer> listInt) {
-        //first take temp var
-        integer returnInt = 0;
-        for (integer eachInt : listInt) {
-            System.debug('eachInt => ' + eachInt);
-            returnInt += eachInt;
-            System.debug('returnInt => ' + returnInt);
-            
-        }
-        return returnInt;
+
+    public static void welcomeMessage(){
+         system.debug('welcome to apex calc');
     }
-}
+ 
+    public static void printNewMessage(string msg){
+         //msg = variable => is used INSIDE the method.
+         system.debug(msg);
+    }
+    public static integer add(integer a, integer b){
+      integer sum = a + b;
+      return sum;
+    }
+ 
+    public static integer add(integer x, integer y, integer z){
+           integer sum = x + y + z;
+           return sum;
+    }
+ }

@@ -1,10 +1,19 @@
-// Use .apex files to store anonymous Apex.
-// You can execute anonymous Apex in VS Code by selecting the
-//     apex text and running the command:
-//     SFDX: Execute Anonymous Apex with Currently Selected Text
-// You can also execute the entire file by running the command:
-//     SFDX: Execute Anonymous Apex with Editor Contents
 
 
-System.debug('Hello World! from VS Code');
-System.debug('I will get there! ');
+
+
+//invoke Auto Launched Flow from Apex
+Map<String, Object> inputs = new Map<String, Object>();
+inputs.put('ownerId', '0058d0000056jFmAAI');
+inputs.put('recordId', '0018d00000KUhaVAAT');
+Flow.Interview autoLaunchFlow = Flow.Interview.createInterview('Auto_Launched_Flow_Demo', inputs);
+autoLaunchFlow.start();
+
+RestApiOutboundCallout.getAnimals();
+RestApiOutboundCallout.getUser();
+RestApiOutboundCallout.getListOfUsers();
+RestApiOutboundCallout.postAnimal();
+RestApiOutboundCallout.postUser();
+RestApiOutboundCallout.getAnimalWithAuthenticationNamedCredential();
+
+

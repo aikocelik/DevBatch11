@@ -1,0 +1,15 @@
+Hands On: If the Case is created where Origin is Email and Contact is not Null then send an email to the realted contact, also save that email as an activity.
+
+
+Implementation:
+
+Part 1: Record Trigger Flow on Case Object with Condition Check of Origin of email.
+
+Part 2: Create Invocable method to sendEmail to Contacts (apex).
+
+    * Multiple Input Parameters - 
+        1: Case Record ID; 
+        2. Contact Record ID; 
+        3. Case Number
+
+Part 3: Add Action under The Flow to use this Apex feature.
